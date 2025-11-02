@@ -8,11 +8,18 @@ import (
 )
 
 
-
 type Database struct {
 	FullPath string
 	Name string
 	Driver string
+}
+
+func NewDatabase(driver string, fullpath string, name string) Database {
+	return Database{
+		Driver: driver,
+		Name:   name,
+		FullPath: fullpath,
+	}
 }
 
 func (database Database) SetDBPath(path string) error {
