@@ -24,7 +24,7 @@ type Database struct {
 func NewDatabase(name, driver string, isRemote bool) *Database {
 
 	if isRemote {
-		if err := godotenv.Load(); err != nil {
+		if err := godotenv.Load("/home/wjames/github/purrfact/.env"); err != nil {
 			log.Fatal(err)
 		}
 
